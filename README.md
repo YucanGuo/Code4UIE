@@ -92,8 +92,8 @@ Run `python [task]_Prompt.py` to construct prompts for each task accordingly.
 Necessary arguments are:
 
 * `dataset`: Name of the dataset.
-* `test_file`: File path of the test dataset.
-* `train_file`: File path of the train dataset.
+* `test_file`: File path of the test set.
+* `train_file`: File path of the train set.
 * `retrieval_strategy`: Retrieval strategy, including `'random'`, `'sentence_emb'`, and `'anonymized_sentence_emb'`.
 * `output_file`: The output file path.
 * `incontext_examples_num`: The number of in-context examples.
