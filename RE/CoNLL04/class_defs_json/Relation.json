@@ -1,0 +1,7 @@
+{
+    "Kill": "class Kill(Relation):\n    \"\"\"People self.head killed People self.tail.\"\"\"\n    def __init__(\n        self,\n        head: People = \"\",\n        tail: People = \"\",\n    ):\n        self.head = head\n        self.tail = tail",
+    "Live_In": "class Live_In(Relation):\n    \"\"\"People self.head lived in Location self.tail.\"\"\"\n    def __init__(\n        self,\n        head: People = \"\",\n        tail: Location = \"\",\n    ):\n        self.head = head\n        self.tail = tail",
+    "Work_For": "class Work_For(Relation):\n    \"\"\"People self.head worked for Organization self.tail.\"\"\"\n    def __init__(\n        self,\n        head: People = \"\",\n        tail: Organization = \"\",\n    ):\n        self.head = head\n        self.tail = tail",
+    "Located_In": "class Located_In(Relation):\n    \"\"\"Location self.head is located in Location self.tail.\"\"\"\n    def __init__(\n        self,\n        head: Location = \"\",\n        tail: Location = \"\",\n    ):\n        self.head = head\n        self.tail = tail",
+    "Organization_Based_In": "class Organization_Based_In(Relation):\n    \"\"\"Organization self.head is based in Location self.tail.\"\"\"\n    def __init__(\n        self,\n        head: Organization = \"\",\n        tail: Location = \"\",\n    ):\n        self.head = head\n        self.tail = tail"
+}

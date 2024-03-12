@@ -1,0 +1,3 @@
+{
+    "Adverse_Effect": "class Adverse_Effect(Relation):\n    \"\"\"self.head is the adverse effect of drug self.tail.\"\"\"\n    def __init__(\n        self,\n        head: Entity = \"\",\n        tail: Entity = \"\",\n    ):\n        self.head = head\n        self.tail = tail"
+}

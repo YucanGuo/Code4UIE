@@ -1,0 +1,5 @@
+{
+    "Location": "class Location(Entity):\n    \"\"\"Geographical entities such as geographical areas and landmasses, bodies of water\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)",
+    "Organization": "class Organization(Entity):\n    \"\"\"Corporations, agencies, and other groups of people defined by an established organizational structure. An Organization entity may be a single organization or a group.\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)",
+    "People": "class People(Entity):\n    \"\"\"People entities are limited to humans. A People entity often is a single person.\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)"
+}
