@@ -1,0 +1,6 @@
+{
+    "Location": "class Location(Entity):\n    \"\"\"Geographical entities such as geographical areas and landmasses, bodies of water\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)",
+    "Organization": "class Organization(Entity):\n    \"\"\"Corporations, agencies, and other groups of people defined by an established organizational structure. An ORG entity may be a single organization or a group. A key feature of an ORG is that it can change members without changing identity.\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)",
+    "Person": "class Person(Entity):\n    \"\"\"Person entities are limited to humans. A PER entity may be a single person or a group.\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)",
+    "Else": "class Else(Entity):\n    \"\"\"Entities that do not belong to any Entity Class above, i.e., an entity that is not a location entity, an organization entity, or a person entity.\"\"\"\n    def __init__(self, name: str):\n        super().__init__(name=name)"
+}

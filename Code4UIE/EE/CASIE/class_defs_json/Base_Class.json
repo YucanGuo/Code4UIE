@@ -1,0 +1,4 @@
+{
+    "Entity": "class Entity:\n    def __init__(self, name: str):\n        self.name = name",
+    "Event": "class Event:\n    def __init__(self, name: str):\n        self.name = name"
+}
