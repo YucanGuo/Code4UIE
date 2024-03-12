@@ -67,7 +67,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='ACE05')
     parser.add_argument('--test_file', type=str, default='EAE/ACE05/test.json')
     parser.add_argument('--train_file', type=str, default='EAE/ACE05/train.json')
-    parser.add_argument('--retrieval_strategy', type=str, default='entity_only_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb', 'entity_only_emb'])
+    parser.add_argument('--retrieval_strategy', type=str, default='entity_only_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb'])
     parser.add_argument('--output_file', type=str, default='EAE/ACE05/prompt/EAE-ace05-1stage-codev1-eoe-10.json')
     parser.add_argument('--incontext_examples_num', type=int, default=10)
     args = parser.parse_args()

@@ -1,7 +1,8 @@
-#-*- coding:Utf-8 -*-
+#-*- coding:utf-8 -*-
 import openai
 import json
 import argparse
+import os
 
 openai.api_key = '' # TODO: add your openai api key here
 openai_model = 'gpt-3.5-turbo' #"gpt-3.5-turbo-16k"
@@ -44,6 +45,8 @@ def get_NER_result():
     system_role_2 = 'You are a highly intelligent and accurate named-entity recognition model and Python coder. You take a sentence as input and convert it into named entities as instances of a set of predefined Python classes.\n'
     with open(input_file,'r',encoding='utf-8') as f:
         NER_inputs = json.load(f)
+    if not os.path.exists(os.path.join(args.task, args.dataset, 'output')):
+        os.mkdir(os.path.join(args.task, args.dataset, 'output'))
     NER_results = []
     for NER_input in NER_inputs:
         NER_result = NER_input
@@ -106,6 +109,8 @@ def get_RE_result():
     system_role_2 = 'You are a highly intelligent and accurate relation extraction model and Python coder. You take a sentence as input and convert it into relations as instances of a set of predefined Python classes.\n'
     with open(input_file,'r',encoding='utf-8') as f:
         RE_inputs = json.load(f)
+    if not os.path.exists(os.path.join(args.task, args.dataset, 'output')):
+        os.mkdir(os.path.join(args.task, args.dataset, 'output'))
     RE_results = []
     for RE_input in RE_inputs:
         RE_result = RE_input
@@ -172,6 +177,8 @@ def get_EE_result():
     system_role_ED = 'You are a highly intelligent and accurate event detection model and Python coder. You take a sentence as input and convert it into event types as an import statement of Python.\n'
     with open(input_file,'r',encoding='utf-8') as f:
         EE_inputs = json.load(f)
+    if not os.path.exists(os.path.join(args.task, args.dataset, 'output')):
+        os.mkdir(os.path.join(args.task, args.dataset, 'output'))
     EE_results = []
     if args.dataset == 'ACE05':
         entity_defs = json.load(open(args.task + '/' + args.dataset + '/class_defs_json/Entity.json'))
@@ -233,6 +240,8 @@ def get_EAE_result():
     system_role = 'You are a highly intelligent and accurate event argument extraction model and Python coder. You take a sentence as input and convert it into event arguments as an instance of a predefined Python class.\n'
     with open(input_file,'r',encoding='utf-8') as f:
         EAE_inputs = json.load(f)
+    if not os.path.exists(os.path.join(args.task, args.dataset, 'output')):
+        os.mkdir(os.path.join(args.task, args.dataset, 'output'))
     EAE_results = []
     for EAE_input in EAE_inputs:
         EAE_result = EAE_input
@@ -250,12 +259,12 @@ def get_EAE_result():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='code-davinci-002', choices=['text-davinci-002', 'code-davinci-002', 'text-davinci-003', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k'])
+    parser.add_argument('--model', type=str, default='gpt-3.5-turbo', choices=['text-davinci-002', 'code-davinci-002', 'text-davinci-003', 'gpt-3.5-turbo', 'gpt-3.5-turbo-16k'])
     parser.add_argument('--task', type=str, default='RE', choices=['NER', 'RE', 'EE', 'EAE'])
-    parser.add_argument('--dataset', type=str, default='NYT')
-    parser.add_argument('--prompt_type', type=str, default='2stage', choices=['1stage', '2stage', '1&2stage'])
-    parser.add_argument('--input_file', type=str, default='RE/NYT/prompt/RE-nyt-1&2stage-code-ase-15.json')
-    parser.add_argument('--output_file', type=str, default='RE/NYT/output/RE-davinci2-nyt-2stage-code-ase-15.json') 
+    parser.add_argument('--dataset', type=str, default='ADE')
+    parser.add_argument('--prompt_type', type=str, default='1stage', choices=['1stage', '2stage', '1&2stage'])
+    parser.add_argument('--input_file', type=str, default='RE/ADE/prompt/RE-ade-1stage-code-ase-12.json')
+    parser.add_argument('--output_file', type=str, default='RE/ADE/output/RE-davinci2-ade-1stage-code-ase-12.json') 
     args = parser.parse_args()
     openai_model = args.model
     input_file = args.input_file

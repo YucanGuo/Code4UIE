@@ -1,0 +1,6 @@
+openai==0.28
+transformers
+torch
+flair
+numpy
+tqdm

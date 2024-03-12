@@ -117,12 +117,12 @@ def prompt_construction(relations: dict):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='NYT')
-    parser.add_argument('--test_file', type=str, default='RE/NYT/test.json')
-    parser.add_argument('--train_file', type=str, default='RE/NYT/train.json')
-    parser.add_argument('--retrieval_strategy', type=str, default='anonymized_sentence_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb', 'entity_only_emb'])
-    parser.add_argument('--output_file', type=str, default='RE/NYT/prompt/RE-nyt-1&2stage-code-ase-15.json')
-    parser.add_argument('--incontext_examples_num', type=int, default=15)
+    parser.add_argument('--dataset', type=str, default='ADE')
+    parser.add_argument('--test_file', type=str, default='RE/ADE/test.json')
+    parser.add_argument('--train_file', type=str, default='RE/ADE/train.json')
+    parser.add_argument('--retrieval_strategy', type=str, default='anonymized_sentence_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb'])
+    parser.add_argument('--output_file', type=str, default='RE/ADE/prompt/RE-ade-1stage-code-ase-12.json')
+    parser.add_argument('--incontext_examples_num', type=int, default=12)
     args = parser.parse_args()
     incontext_examples_num = args.incontext_examples_num
     incontext_examples_dir = args.train_file

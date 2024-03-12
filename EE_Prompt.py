@@ -100,7 +100,7 @@ if __name__ == '__main__':
     parser.add_argument('--dataset', type=str, default='CASIE')
     parser.add_argument('--test_file', type=str, default='EE/CASIE/test.json')
     parser.add_argument('--train_file', type=str, default='EE/CASIE/train.json')
-    parser.add_argument('--retrieval_strategy', type=str, default='anonymized_sentence_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb', 'entity_only_emb'])
+    parser.add_argument('--retrieval_strategy', type=str, default='anonymized_sentence_emb', choices=['random', 'sentence_emb', 'anonymized_sentence_emb'])
     parser.add_argument('--output_file', type=str, default='EE/CASIE/prompt/EE-casie-2stage-code-ase-10.json')
     parser.add_argument('--incontext_examples_num', type=int, default=10)
     args = parser.parse_args()
