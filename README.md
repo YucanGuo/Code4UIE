@@ -13,7 +13,7 @@ conda create -n Code4UIE python=3.10
 
 activate Code4UIE
 
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### Dataset Preparation
